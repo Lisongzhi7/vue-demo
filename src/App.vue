@@ -11,11 +11,26 @@
             <span>文章归档</span>
             <span>友情链接</span>
             <span>关于我</span>
+            <span><i class="el-icon-search"></i></span>
           </div>
         </div>
       </div>
-      <div class="fd-center">
-      <div class="fd-article-card">
+      <div class="fd-center" >
+
+      <div class="fd-article-card" >
+        <div class="fd-cursor-box">
+          <el-carousel height="150px">
+            <el-carousel-item v-for="(item, index) of images" :key="index">
+              <div class="small">
+                <img :src="item.img"  alt="上海鲜花港 - 郁金香" />
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <div class="fd-head-title">
+          <i class="el-icon-loading"></i>
+          ashdajshdkadsjdladkakl
+        </div>
         <div class="fd-card" v-for="(item, index) of articles">
           <div class="fd-image">{{item.title}}</div>
           <div class="fd-desc">{{item.desc}}</div>
@@ -32,6 +47,7 @@
       </div>
 
       </div>
+
       <div class="fd-bottom">
         蜀ICP备18020377号
       </div>
@@ -111,11 +127,38 @@ export default {
                 name: "读书"
               }
             ]
-          }
-        ]
+          },
+
+
+        ],
+      images: [
+        {
+          img: "/static/image/card1.jpg"
+        }
+      ]
     }
+  },
+  methods: {},
+  mounted () {
+
+  },
+  created() {
+    setTimeout(() => {
+      window.L2Dwidget.init({
+        pluginRootPath: 'static/live2dw/',
+        pluginJsPath: 'lib/',
+        pluginModelPath: 'live2d-widget-model-z16/assets/',
+        tagMode: false,
+        debug: false,
+        model: { jsonPath: '/static/live2dw/live2d-widget-model-tororo/assets/tororo.model.json' },
+        display: { position: 'left', width: 100, height: 200 },
+        mobile: { show: true },
+        log: false
+      })
+    }, 1000)
   }
 }
+
 </script>
 
 <style>
@@ -167,6 +210,9 @@ export default {
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
 }
 .fd-bottom{
   display: flex;
@@ -183,6 +229,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  justify-content: center;
 }
 .fd-card{
   width: 400px;
@@ -239,7 +286,39 @@ export default {
   padding: 5px 15px;
   border-radius: 10px;
   color: #fff;
-
-
 }
+.fd-cursor-box{
+  width: 100%;
+  height: 300px;
+  background: #9a9696;
+}
+.fd-head-title{
+  width: 90%;
+  height: 60px;
+  margin-top: -37px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 24px;
+  padding-left: 20px;
+  padding-top: 20px;
+  z-index: 10;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+.small{
+  width: 100%;
+  height: 100%;
+}
+.small img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.el-carousel__container{
+  height: 300px !important;
+}
+
+
+
+
+
 </style>
