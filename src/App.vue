@@ -22,14 +22,14 @@
           <el-carousel height="150px">
             <el-carousel-item v-for="(item, index) of images" :key="index">
               <div class="small">
-                <img :src="item.img"  alt="上海鲜花港 - 郁金香" />
+                <img class="fd-img" :src="item.img"  alt="上海鲜花港 - 郁金香" />
               </div>
             </el-carousel-item>
           </el-carousel>
         </div>
         <div class="fd-head-title">
           <i class="el-icon-loading"></i>
-          ashdajshdkadsjdladkakl
+          每一个成功者都有一个开始。勇于开始，才能找到成功的路。
         </div>
         <div class="fd-card" v-for="(item, index) of articles">
           <div class="fd-image">{{item.title}}</div>
@@ -134,6 +134,12 @@ export default {
       images: [
         {
           img: "/static/image/card1.jpg"
+        },
+        {
+          img: "/static/image/card2.jpg"
+        },
+        {
+          img: "/static/image/card3.jpg"
         }
       ]
     }
@@ -151,7 +157,7 @@ export default {
         tagMode: false,
         debug: false,
         model: { jsonPath: '/static/live2dw/live2d-widget-model-tororo/assets/tororo.model.json' },
-        display: { position: 'left', width: 100, height: 200 },
+        display: { position: 'left', width: 200, height: 300 },
         mobile: { show: true },
         log: false
       })
@@ -302,7 +308,7 @@ export default {
   padding-left: 20px;
   padding-top: 20px;
   z-index: 10;
-  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  background-image: linear-gradient(to right,#69e7e6,#0a4670);
 }
 .small{
   width: 100%;
@@ -316,6 +322,13 @@ export default {
 .el-carousel__container{
   height: 300px !important;
 }
+.fd-cursor-box{
+  border-radius: 30px;
+}
+.fd-img{
+  border-radius: 30px;
+}
+
 
 
 
