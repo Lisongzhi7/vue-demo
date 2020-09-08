@@ -1,6 +1,8 @@
 <template>
   <div class="head">
-    疯狂的疯狂的司法考试放宽
+    <div class="guidang">
+
+    </div>
   </div>
 </template>
 
@@ -15,5 +17,14 @@ export default {
   width: 100%;
   height: 100%;
   background: #c2e9fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.guidang{
+    height: 1600px;
+    width: 1100px;
+    background: #ee9900;
 }
 </style>

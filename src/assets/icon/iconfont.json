@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "918740",
+      "name": "hi-in icon-回到顶部2-01",
+      "font_class": "hiiniconhuidaodingbu201",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "8864689",
+      "name": "声音 copy@1x",
+      "font_class": "shengyincopyx",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
       "icon_id": "3941401",
       "name": "关于我",
       "font_class": "guanyuwo",
