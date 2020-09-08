@@ -18,7 +18,6 @@
             <el-dialog :modal-append-to-body="false" :show-close="false" :visible.sync="dialogFormVisible">
                 <div class="zhezhao">
                     <span><img src="/static/image/card6.gif"></span>
-
                 </div>
             </el-dialog>
         </div>
@@ -33,13 +32,12 @@
                     <router-link to="/guidang"><span class="fd-icon"><i class="iconfont icon-guidang3"></i></span><span>文章归档</span></router-link>
                     <router-link to="/lianjie"><span class="fd-icon"><i class="iconfont icon-youqinglianjie"></i></span><span>友情链接</span></router-link>
                     <router-link to="/guanyuwo"><span class="fd-icon"><i class="iconfont icon-guanyuwo"></i></span><span>关于我</span></router-link>
-                    <span @click="dialogFormVisible = true"><i class="el-icon-search"></i></span>
+                    <span  @click="dialogFormVisible = true"><i class="el-icon-search"></i></span>
                 </div>
             </div>
             <el-dialog :modal-append-to-body="false" :show-close="false" :visible.sync="dialogFormVisible">
                 <div class="zhezhao">
                     <span><img src="/static/image/card6.gif"></span>
-
                 </div>
             </el-dialog>
         </div>
@@ -53,17 +51,18 @@
                     </span>
             </div>
             <router-view></router-view>
-
         </div>
 
         <div class="fd-bottom">
             蜀ICP备18020378号
         </div>
+
     </div>
 
 </template>
 
 <script>
+
 export default {
     name: 'App',
     data() {
@@ -94,14 +93,15 @@ export default {
                 pluginModelPath: 'live2d-widget-model-z16/assets/',
                 tagMode: false,
                 debug: false,
-                model: {jsonPath: '/static/live2dw/live2d-widget-model-wanko/assets/wanko.model.json'},
-                display: {position: 'left', width: 250, height: 300},
+                model: {jsonPath: '/static/live2dw/live2d-widget-model-z16/assets/z16.model.json'},
+                display: {position: 'left', width: 250, height: 400},
                 mobile: {show: true},
                 log: false
             })
         }, 1000)
     }
 };
+
 (function(window, document, undefined) {
     var hearts = [];
     window.requestAnimationFrame = (function() {
@@ -166,19 +166,23 @@ export default {
     }
 })(window, document);
 
-
-
-
 </script>
 
 <style>
+@font-face {
+    font-family:'Alibaba-PuHuiTi-Medium';
+    src: url('/static/font/Alibaba-PuHuiTi-Medium.otf') format('truetype');
+}
+@font-face {
+    font-family:'Alibaba-PuHuiTi-Bold';
+    src: url('/static/font/Alibaba-PuHuiTi-Bold.otf') format('truetype');
+}
 *, html, body {
     margin: 0;
     padding: 0;
 }
 #app {
     display: flex;
-    height: 100vh;
     flex-direction: column;
 }
 .fd-head {
@@ -207,19 +211,22 @@ export default {
     height: 55px;
 }
 .fd-logo-box span {
-    font-size: 25px;
+    font-size: 30px;
     height: 100%;
     font-weight: bold;
     color: #fff;
     display: flex;
     align-items: center;
-    font-family: 幼圆;
+    font-family: 'Alibaba-PuHuiTi-Bold';
 }
 .fd-logo-tile {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+.fd-logo-tile a{
+    margin-right: 10px;
 }
 a {
     text-decoration: none;
@@ -229,19 +236,20 @@ a {
     line-height: 60px;
     height: 60px;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 14px;
     color: #fff;
-    font-family: "Microsoft YaHei";
+    font-family: "Alibaba-PuHuiTi-Medium";
 }
-/*.router-link-active span {*/
-/*    color: lightpink;*/
-/*}*/
+.router-link-active span{
+    color: lightpink;
+}
 .fd-center {
     display: flex;
     flex-direction: column;
     /*margin-top: 110px;*/
     height: 100%;
     width: 100%;
+    margin-bottom: 35px;
 }
 .fd-bottom {
     display: flex;
@@ -287,7 +295,7 @@ a {
     height: 100%;
 }
 .fd-icon i{
-    font-size: 23px;
+    font-size: 15px;
 }
 .box a:hover{
     background: lavender;

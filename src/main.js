@@ -10,6 +10,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 import VueParticles from 'vue-particles'
 import '@/assets/icon/iconfont.css'
+import Api from './api/index.js';
+Vue.prototype.$api = Api;
 Vue.use(VueParticles)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
