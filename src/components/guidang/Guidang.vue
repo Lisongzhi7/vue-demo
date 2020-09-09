@@ -12,261 +12,38 @@
                 </div>
             </div>
             <div class="fd-zhong">
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo">
-                    <div class="zuo-name">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
+                    <div data-aos="fade-up"
+                         data-aos-duration="3000" v-for="(item,index) of List" class="fd-zuo">
+                        <div class="zuo-name" :class="{'fd-left-card' : index % 2 != 0}">
+                            <div class="zuo-head">
+                                <span>{{item.time}}</span>
+                            </div>
+                            <div class="zuo-center">
+                                <span>{{item.decs}}</span>
+                            </div>
+                            <div class="zuo-bottom">
                             <span>
-                                <el-button type="danger" round>阅读全文</el-button>
+                                <el-button type="danger" round>{{item.title}}</el-button>
                             </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="zuo-img">
-                        <div class="img-zuo">
+                        <div class="zuo-img">
+                            <div class="img-zuo" :class="{'fd-ddd' : index % 2 != 0}">
                             <span>
                                 <i class="el-icon-caret-right"></i>
                             </span>
-                        </div>
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
+                            </div>
+                            <div class="img-you" :class="{'fd-left' : index % 2 != 0}">
+                                <div class="you-tubiao">
+                                    <div class="xiaotubiao">
+                                        <img :src="item.image">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="zhong-zhong"></div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo base">
-                    <div class="zuo-img">
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-left"></i>
-                            </span>
-                        </div>
-
-                    </div>
-                    <div class="zuo-name to">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo">
-                    <div class="zuo-name">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="zuo-img">
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-right"></i>
-                            </span>
-                        </div>
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="zhong-zhong"></div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo base">
-                    <div class="zuo-img">
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-left"></i>
-                            </span>
-                        </div>
-
-                    </div>
-                    <div class="zuo-name to">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo">
-                    <div class="zuo-name">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="zuo-img">
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-right"></i>
-                            </span>
-                        </div>
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="zhong-zhong"></div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo base">
-                    <div class="zuo-img">
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-left"></i>
-                            </span>
-                        </div>
-
-                    </div>
-                    <div class="zuo-name to">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo">
-                    <div class="zuo-name">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="zuo-img">
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-right"></i>
-                            </span>
-                        </div>
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="zhong-zhong"></div>
-                <div data-aos="fade-up"
-                     data-aos-duration="3000" class="fd-zuo base">
-                    <div class="zuo-img">
-                        <div class="img-you">
-                            <div class="you-tubiao">
-                                <div class="xiaotubiao">
-                                    <img src="/static/image/card1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="img-zuo">
-                            <span>
-                                <i class="el-icon-caret-left"></i>
-                            </span>
-                        </div>
-
-                    </div>
-                    <div class="zuo-name to">
-                        <div class="zuo-head">
-                            <span>2020-6月读书</span>
-                        </div>
-                        <div class="zuo-center">
-                            <span>2020年6月的一些业务人文读书记录，记录一下常识</span>
-                        </div>
-                        <div class="zuo-bottom">
-                            <span>
-                                <el-button type="danger" round>阅读全文</el-button>
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
                 </div>
         </div>
-
     </div>
 </template>
 
@@ -315,6 +92,47 @@ export default {
                 name:'Java (7)'
             },{
                 name:'Java (7)'
+            },],
+            List:[{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
+            },{
+                time:'2020-6月读书',
+                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                title:'阅读全文',
+                image:'/static/image/card1.jpg'
             },]
         }
     },
@@ -346,7 +164,14 @@ export default {
     align-items: center;
     flex-wrap: wrap;
 }
-
+.fd-left{
+    margin-left: -128px;
+}
+.fd-ddd{
+    margin-left: -325px;
+    transform: rotate(180deg);
+    margin-top: -86px;
+}
 .guidang {
     height: 1600px;
     width: 1100px;
@@ -399,7 +224,7 @@ export default {
     height: 1500px;
     width: 1000px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
     background: #fff;
@@ -407,25 +232,19 @@ export default {
     margin-top: 30px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
-.fd-zuo{
-    height: 140px;
+.fd-zuo {
+    height: 160px;
     width: 400px;
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
     margin-left: 20px;
-}
-.zhong-zhong{
-    height: 280px;
-    width: 5px;
-    background: #b49fda;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-right: 3px solid;
 }
 .zuo-name{
     height: 140px;
     width: 300px;
+    margin-left: 27px;
+    border-radius: 5px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
@@ -437,7 +256,7 @@ export default {
     display: flex;
     align-items: flex-end;
     font-weight: bold;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #fff;
 }
 .zuo-head span{
     margin-left: 5px;
@@ -484,11 +303,11 @@ export default {
 }
 .el-icon-caret-right{
     font-size: 25px;
-    color: #fff;
+    color: #000;
 }
 .el-icon-caret-left{
     font-size: 25px;
-    color: #fff;
+    color: #000;
 }
 .img-you{
     height: 140px;
@@ -518,14 +337,12 @@ export default {
     width: 40px;
     border-radius: 20px;
 }
-.base{
-    margin-top: 140px;
-    margin-left: -28px;
+.fd-left-card{
+    margin-left: 480px;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
-.to{
-    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 
-}
+
 
 
 

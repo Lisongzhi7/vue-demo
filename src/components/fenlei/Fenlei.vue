@@ -96,21 +96,21 @@ export default {
 .zhongbu{
     height: 1900px;
     width: 1100px;
-    background: #795da3;
     z-index: 1;
 }
 .label{
     height: 270px;
     width: 1100px;
-    background: #cccccc;
     margin-top: -40px;
     display: flex;
     flex-direction: column;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+    border-radius: 5px;
 }
 .label-one{
     height: 60px;
     width: 1100px;
-    background: #0086b3;
     display: flex;
     justify-content: center;
     align-items: center;
