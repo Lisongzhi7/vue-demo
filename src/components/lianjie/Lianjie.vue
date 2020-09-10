@@ -52,6 +52,17 @@ export default {
                 learning:'前往学习'
             },]
         }
+    },
+    getList() {
+        this.$api.get(`/api/v1/project/${this.current}/${this.size}`, null, (res) => {
+            if (res) {
+                this.list = res.data.records;
+                this.total = res.data.total;
+            }
+        })
+    },
+    mounted() {
+        this.getList();
     }
 }
 </script>

@@ -43,6 +43,10 @@
                         </div>
                     </div>
                 </div>
+
+            <div>
+                <input v-model="wz.name"></input>
+            </div>
         </div>
     </div>
 </template>
@@ -93,6 +97,15 @@ export default {
             },{
                 name:'Java (7)'
             },],
+
+            wz: {
+                "categoryId": "",
+                "content": "",
+                "desction": "",
+                "image": "",
+                "name": "",
+                "tags": []
+            },
             List:[{
                 time:'2020-6月读书',
                 decs:'2020年6月的一些业务人文读书记录，记录一下常识',
@@ -147,10 +160,27 @@ export default {
             var color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
             return color;
 
+        },
+        deleteWz(id) {
+            this.$api.delete('/api/v1/category/' + id, null, (res) => {
+
+            })
+        },
+        getWzList() {
+            this.$api.get('/api/v1/category/' + id, this.wz, (res) => {
+                if (res) {
+                    let list = [];
+                    for (let i = 0; i < res.data.length; i++) {
+                        let item = res.data[i];
+                        list.push(...item.articles);
+                    }
+                    this.List = list;
+                }
+            })
         }
     },
     mounted() {
-        console.log(this.randoColor());
+       this.getWzList();
     }
 }
 </script>

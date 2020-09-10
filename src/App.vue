@@ -29,7 +29,7 @@
         <div v-if="showNav" class="fd-head second">
             <div class="fd-head-center">
                 <div class="fd-logo-box">
-                    <span><img class="logo-box" src="/static/image/logo.png">小懒码</span>
+                    <span><img class="logo-box" src="http://xlsb.luokangyuan.com/logo.png">小懒码</span>
                 </div>
                 <div class="fd-logo-tile box">
                     <router-link to="/home"><span class="fd-icon"><i
@@ -224,11 +224,16 @@ window.onload = function () {
             }
         }, 30);
     }
+
 }
+
+
 
 </script>
 
 <style>
+
+
 @font-face {
     font-family: 'Alibaba-PuHuiTi-Medium';
     src: url('/static/font/Alibaba-PuHuiTi-Medium.otf') format('truetype');

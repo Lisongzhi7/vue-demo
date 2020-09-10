@@ -11,6 +11,8 @@ import router from './router'
 import VueParticles from 'vue-particles'
 import '@/assets/icon/iconfont.css'
 import Api from './api/index.js';
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 Vue.prototype.$api = Api;
 Vue.use(VueParticles)
 Vue.config.productionTip = false

@@ -5,6 +5,8 @@ import Fenlei from '@/components/fenlei/Fenlei'
 import Guidang from '@/components/guidang/Guidang'
 import Lianjie from '@/components/lianjie/Lianjie'
 import guanyuwo from '@/components/guanyuwo/Guanyuwo'
+import admin from '@/components/admin/Admin'
+import detail from '@/components/detail/Detail'
 
 Vue.use(Router)
 
@@ -15,6 +17,17 @@ export default new Router({
       name: 'Home',
       component: Home
     },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: admin
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: detail
+    },
+
     {
       path: '/home',
       name: 'Home',

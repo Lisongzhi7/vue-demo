@@ -96,8 +96,12 @@ export default {
         getCurrentData() {
         },
         showDetail(item) {
-            // 第一步前往详情页面
-            // 第二步把item传到详情页面
+            this.$router.push({
+                name: 'Detail',
+                params: {
+                   wz: item
+                }
+            })
         }
     },
     mounted() {
