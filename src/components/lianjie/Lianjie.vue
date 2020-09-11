@@ -1,7 +1,7 @@
 <template>
     <div class="head">
         <div class="lianjie">
-            <div v-for="(item,index) of list" data-aos="fade-up"
+            <div v-for="(item,index) of list" :class="colorOne(index)" data-aos="fade-up"
                  data-aos-duration="3000" class="fd-card shadow">
                 <div class="card">
                 <div class="card-image">
@@ -18,7 +18,9 @@
 
                 </div>
                 <div class="fd-dibu">
-                    <el-button round>{{item.learning}}</el-button>
+                    <a :href="item.url" target="_blank">
+                    <el-button round>前去学习</el-button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -34,35 +36,33 @@ export default {
                 img:'/static/image/card8.jpg',
                 name:'码酱',
                 desc:'不忘初心，努力做有价值的技术文章',
-                learning:'前往学习'
+                url:'http://luokangyuan.com/'
             },{
                 img:'/static/image/card8.jpg',
                 name:'码酱',
                 desc:'不忘初心，努力做有价值的技术文章',
-                learning:'前往学习'
+                url:'https://blinkfox.github.io/'
             },{
                 img:'/static/image/card8.jpg',
                 name:'码酱',
                 desc:'不忘初心，努力做有价值的技术文章',
-                learning:'前往学习'
+                url:'https://me.csdn.net/jlh912008548'
             },{
                 img:'/static/image/card8.jpg',
                 name:'码酱',
                 desc:'不忘初心，努力做有价值的技术文章',
-                learning:'前往学习'
+                url:'https://songzixian.com/'
             },]
         }
     },
-    getList() {
-        this.$api.get(`/api/v1/project/${this.current}/${this.size}`, null, (res) => {
-            if (res) {
-                this.list = res.data.records;
-                this.total = res.data.total;
-            }
-        })
+    methods:{
+      colorOne(index){
+          return `kapian${index +1}`
+      }
     },
+
     mounted() {
-        this.getList();
+
     }
 }
 </script>
@@ -102,6 +102,16 @@ export default {
     border-radius: 5px;
     margin-bottom: 40px;
 }
+.kapian2{
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.kapian3{
+    background-image: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+}
+.kapian4{
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
 .card{
     height: 170px;
     width: 360px;

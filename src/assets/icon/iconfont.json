@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14461382",
+      "name": "diandian",
+      "font_class": "diandian",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
       "icon_id": "918740",
       "name": "hi-in icon-回到顶部2-01",
       "font_class": "hiiniconhuidaodingbu201",

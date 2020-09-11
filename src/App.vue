@@ -146,7 +146,6 @@ export default {
         }
         requestAnimationFrame(gameloop);
     }
-
     function attachEvent() {
         var old = typeof window.onclick === "function" && window.onclick;
         window.onclick = function (event) {
@@ -330,6 +329,7 @@ a {
     height: 100%;
     width: 100%;
     /*margin-bottom: 35px;*/
+    align-items: center;
 }
 
 .fd-bottom {
@@ -354,7 +354,6 @@ a {
     width: 100%;
     background: black;
 }
-
 .fd-name {
     margin-top: -280px;
     width: 100%;
