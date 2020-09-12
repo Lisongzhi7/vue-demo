@@ -116,7 +116,7 @@ export default {
             // 当前页码
             current: 1,
             // 每页数据条数
-            size: 10,
+            size: 20,
             total: 0
         }
     },

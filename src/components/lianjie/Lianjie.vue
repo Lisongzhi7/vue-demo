@@ -1,24 +1,24 @@
 <template>
     <div class="head">
         <div class="lianjie">
-            <div v-for="(item,index) of list" :class="colorOne(index)" data-aos="fade-up"
+            <div v-for="(item,index) of list" :style="item.bgColor" data-aos="fade-up"
                  data-aos-duration="3000" class="fd-card shadow">
                 <div class="card">
                 <div class="card-image">
-                    <img :src="item.img">
+                    <img :src="item.image">
                 </div>
                     <div class="card-head">
                         <div class="card-name">
                             <span>{{item.name}}</span>
                         </div>
                         <div class="card-leirong">
-                            <span>{{item.desc}}</span>
+                            <span>{{item.descInfo}}</span>
                         </div>
                     </div>
 
                 </div>
                 <div class="fd-dibu">
-                    <a :href="item.url" target="_blank">
+                    <a :href="item.githubUrl" target="_blank">
                     <el-button round>前去学习</el-button>
                     </a>
                 </div>
@@ -32,37 +32,24 @@ export default {
     name: "Lianjie",
     data(){
         return{
-            list:[{
-                img:'/static/image/card8.jpg',
-                name:'码酱',
-                desc:'不忘初心，努力做有价值的技术文章',
-                url:'http://luokangyuan.com/'
-            },{
-                img:'/static/image/card8.jpg',
-                name:'码酱',
-                desc:'不忘初心，努力做有价值的技术文章',
-                url:'https://blinkfox.github.io/'
-            },{
-                img:'/static/image/card8.jpg',
-                name:'码酱',
-                desc:'不忘初心，努力做有价值的技术文章',
-                url:'https://me.csdn.net/jlh912008548'
-            },{
-                img:'/static/image/card8.jpg',
-                name:'码酱',
-                desc:'不忘初心，努力做有价值的技术文章',
-                url:'https://songzixian.com/'
-            },]
+            list:[],
         }
     },
     methods:{
       colorOne(index){
           return `kapian${index +1}`
+      },
+      getList(){
+          this.$api.get(`/api/v1/links`, null, (res) => {
+              if (res){
+                    this.list=res.data;
+              }
+          })
       }
     },
 
     mounted() {
-
+        this.getList();
     }
 }
 </script>

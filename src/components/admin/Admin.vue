@@ -24,7 +24,7 @@
                             <span>生死簿</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="2-1">用户管理</el-menu-item>
+                            <el-menu-item index="2-1">友情链接</el-menu-item>
                             <el-menu-item index="2-2">数据同步</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -104,8 +104,8 @@
                 <div class="page-center-head">
                     <div class="page-head-head">
                         <div v-for="(item,index) of list" :class="color(index)" class="a-head">
-                            <span class="a">{{item.name}}</span>
-                            <span class="b">{{item.time}}</span>
+                            <span class="a">{{ item.name }}</span>
+                            <span class="b">{{ item.time }}</span>
                         </div>
                     </div>
                     <div class="page-head-center">
@@ -115,12 +115,12 @@
                                 <i class="iconfont icon-diandian"></i>
                             </div>
                             <div class="zuo-bottom">
-                                <div v-for="(item,index) of List" class="zuo-bottom-a">
+                                <div @click="showBox(index)" v-for="(item,index) of List" class="zuo-bottom-a">
                                     <div class="zuo-bottom-b">
                                         <i :class="item.image"></i>
                                     </div>
                                     <div class="zuo-bottom-c">
-                                        <span>{{item.designation}}</span>
+                                        <span>{{ item.designation }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="zuo-ab">
                                 <div class="Echarts">
-                                <div id="main" style="width: 950px;height: 370px"></div>
+                                    <div id="main" style="width: 950px;height: 370px"></div>
                                 </div>
                             </div>
                         </div>
@@ -191,6 +191,34 @@
                 </div>
             </div>
         </div>
+        <el-dialog title="收货地址" :visible.sync="isShow">
+            <el-form :model="yqlj">
+                <el-form-item label="名称" :label-width="formLabelWidth">
+                    <el-input v-model="yqlj.name" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="头像地址" :label-width="formLabelWidth">
+                    <el-input v-model="yqlj.image" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="描述信息" :label-width="formLabelWidth">
+                    <el-input v-model="yqlj.descInfo" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="giehub地址" :label-width="formLabelWidth">
+                    <el-input v-model="yqlj.githubUrl" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="博客地址" :label-width="formLabelWidth">
+                    <el-input v-model="yqlj.blogUrl" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="背景样式" :label-width="formLabelWidth">
+                    <el-input v-model="yqlj.bgColor" autocomplete="off"></el-input>
+                </el-form-item>
+
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="isShow = false">取 消</el-button>
+                <el-button type="primary" @click="saveyqlj()">确 定</el-button>
+            </div>
+        </el-dialog>
+
     </div>
 </template>
 
@@ -214,55 +242,90 @@ export default {
             },],
             List: [{
                 image: 'el-icon-notebook-1',
-                designation: '生死簿',
+                designation: '友情链接',
             }, {
                 image: 'el-icon-search',
                 designation: '查询寿命',
             }, {
                 image: 'el-icon-edit-outline',
                 designation: '入境管理',
-            },{
+            }, {
                 image: 'el-icon-refresh',
                 designation: '货币管理',
-            },{
+            }, {
                 image: 'el-icon-tickets',
                 designation: '操作日志',
-            },{
+            }, {
                 image: 'el-icon-school',
                 designation: '十八地狱',
-            },{
+            }, {
                 image: 'el-icon-finished',
                 designation: '发勾魂单',
-            },{
+            }, {
                 image: 'el-icon-coin',
                 designation: '资产管理',
-            },{
+            }, {
                 image: 'el-icon-s-tools',
                 designation: '员工设置',
-            },{
+            }, {
                 image: 'el-icon-s-shop',
                 designation: '营销管理',
-            },{
+            }, {
                 image: 'el-icon-loading',
                 designation: '重新投胎',
-            },{
+            }, {
                 image: 'el-icon-view',
                 designation: '百鬼夜行',
             },],
-            ListImg:[{
-                img:'http://xlsb.luokangyuan.com/image-bj-03.jpg'
-            },{
-                img:'http://xlsb.luokangyuan.com/image-bj-03.jpg'
-            },{
-                img:'http://xlsb.luokangyuan.com/image-bj-03.jpg'
-            },{
-                img:'http://xlsb.luokangyuan.com/image-bj-03.jpg'
-            },{
-                img:'http://xlsb.luokangyuan.com/image-bj-03.jpg'
-            },]
+            ListImg: [{
+                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+            }, {
+                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+            }, {
+                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+            }, {
+                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+            }, {
+                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+            },],
+            isShow:false,
+            yqlj: {
+                name:'',
+                image:'',
+                descInfo:'',
+                githubUrl:'',
+                blogUrl:'',
+                bgColor:''
+            }
         }
     },
     methods: {
+        showBox(index){
+            if(index==0){
+                this.isShow=true;
+                this.yqlj.name='';
+                this.yqlj.image='';
+                this.yqlj.descInfo='';
+                this.yqlj.githubUrl='';
+                this.yqlj.blogUrl='';
+                this.yqlj.bgColor='';
+            }
+        },
+        saveyqlj(){
+            this.isShow=false;
+            this.$api.post(`/api/v1/links`, this.yqlj, (res) => {
+                if (res) {
+                    this.$message({
+                        message: '恭喜你，这是一条成功消息',
+                        type: 'success'
+                    });
+                }
+                else {
+                    this.$message.error('错了哦，这是一条错误消息');
+                }
+            })
+        },
+
         handleOpen(key, keyPath) {
             console.log(key, keyPath);
         },
@@ -272,7 +335,7 @@ export default {
         color(index) {
             return `kapian${index + 1}`
         },
-        myEcharts(){
+        myEcharts() {
             var myChart = this.$echarts.init(document.getElementById('main'));
 
             var option = {
@@ -288,7 +351,7 @@ export default {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: ['0', '2', '3', '4', '5', '6', '7','8','9','10']
+                    data: ['0', '2', '3', '4', '5', '6', '7', '8', '9', '10']
                 },
                 yAxis: {
                     type: 'value'
@@ -298,20 +361,20 @@ export default {
                         name: '出境人数',
                         type: 'line',
                         stack: '总量',
-                        data: [40,30,60,85,44,33,48,63,59,33]
+                        data: [40, 30, 60, 85, 44, 33, 48, 63, 59, 33]
                     },
                     {
                         name: '入境人数',
                         type: 'line',
                         stack: '总量',
-                        data: [22,36,52,14,32,85,63,22,14,62]
+                        data: [22, 36, 52, 14, 32, 85, 63, 22, 14, 62]
                     },
 
                 ]
             };
             myChart.setOption(option);
         },
-        myEchart(){
+        myEchart() {
             var myChart = this.$echarts.init(document.getElementById('to'));
 
             var option = {
@@ -377,23 +440,28 @@ export default {
     align-items: center;
     justify-content: center;
 }
+
 .el-col-12 {
     width: 15%;
 }
+
 .zuo {
     width: 300px;
     height: 1200px;
 }
+
 .el-menu-vertical-demo {
     height: 1200px;
     width: 300px;
 }
+
 .page {
     width: calc(100% - 300px);
     height: 1200px;;
     display: flex;
     flex-direction: column;
 }
+
 .page-head {
     height: 60px;
     width: 1577px;
@@ -404,18 +472,21 @@ export default {
     justify-content: flex-end;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
+
 .xx {
     margin-right: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .mc {
     margin-right: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .mc span {
     font-size: 15px;
     color: #333;
@@ -469,14 +540,17 @@ export default {
     color: #fff;
     margin-top: 10px;
 }
+
 .kapian1 {
     background: #00c6fb;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
+
 .kapian2 {
     background: #ee9900;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
+
 .kapian3 {
     background: #b49fda;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
@@ -512,12 +586,15 @@ export default {
     font-family: Alibaba-PuHuiTi-Medium;
     justify-content: space-between;
 }
+
 .zuo-head span {
     margin-left: 20px;
 }
+
 .zuo-head i {
     margin-right: 20px;
 }
+
 .zuo-bottom {
     height: 370px;
     width: 950px;
@@ -526,6 +603,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .zuo-bottom-a {
     height: 185px;
     width: 140px;
@@ -535,6 +613,7 @@ export default {
     flex-direction: column;
 
 }
+
 .zuo-bottom-b {
     height: 90px;
     width: 90px;
@@ -546,6 +625,7 @@ export default {
     font-size: 35px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
+
 .zuo-bottom-c {
     height: 30px;
     width: 90px;
@@ -553,6 +633,7 @@ export default {
     align-items: center;
     justify-content: center;
 }
+
 .page-center-you {
     height: 410px;
     width: 590px;
@@ -560,7 +641,8 @@ export default {
     margin-top: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
-.you-head{
+
+.you-head {
     height: 50px;
     width: 590px;
     display: flex;
@@ -569,26 +651,31 @@ export default {
     font-family: Alibaba-PuHuiTi-Medium;
     justify-content: space-between;
 }
+
 .you-head span {
     margin-left: 20px;
 }
+
 .you-head i {
     margin-right: 20px;
 }
-.you-center{
+
+.you-center {
     height: 370px;
     width: 590px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.you-bottom{
+
+.you-bottom {
     height: 350px;
     width: 570px;
     display: flex;
     flex-direction: column;
 }
-.you-bottom-head{
+
+.you-bottom-head {
     height: 50px;
     width: 570px;
     background: dodgerblue;
@@ -597,59 +684,72 @@ export default {
     font-family: Alibaba-PuHuiTi-Medium;
     color: #fff;
 }
-.you-a{
+
+.you-a {
     margin-left: 15px;
 }
-.you-b{
+
+.you-b {
     margin-left: 80px;
 }
-.you-bottom-center{
+
+.you-bottom-center {
     height: 140px;
     width: 570px;
 }
-.you-bottom-center-a{
+
+.you-bottom-center-a {
     height: 40px;
     width: 570px;
     display: flex;
     align-items: center;
 }
-.you-a-a{
+
+.you-a-a {
     margin-left: 15px;
 }
-.you-a-b{
+
+.you-a-b {
     margin-left: 30px;
 }
-.you-bottom-center-b{
+
+.you-bottom-center-b {
     height: 40px;
     width: 570px;
     display: flex;
     align-items: center;
 }
-.you-a-c{
+
+.you-a-c {
     margin-left: 15px;
 }
-.you-a-d{
+
+.you-a-d {
     margin-left: 30px;
 }
-.you-bottom-center-c{
+
+.you-bottom-center-c {
     height: 60px;
     width: 570px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #999999;
 }
-.you-a-e{
+
+.you-a-e {
     height: 40px;
     width: 40px;
     border-radius: 20px;
     margin-left: 5px;
 }
-.you-a-e img{
+
+.you-a-e img {
     height: 40px;
     width: 40px;
     border-radius: 20px;
 }
-.you-a-f{
+
+.you-a-f {
     height: 40px;
     width: 40px;
     background: #00c6fb;
@@ -661,50 +761,60 @@ export default {
     border-radius: 20px;
     margin-left: 5px;
 }
-.you-bottom-center-d{
+
+.you-bottom-center-d {
     height: 60px;
     width: 570px;
     display: flex;
     align-items: center;
 }
-.ypu-a-g{
+
+.ypu-a-g {
     margin-left: 15px;
 }
-.ypu-a-h{
+
+.ypu-a-h {
     margin-left: 80px;
 }
-.you-bottom-center-e{
+
+.you-bottom-center-e {
     height: 60px;
     width: 570px;
     display: flex;
     align-items: center;
 }
-.ypu-a-i{
+
+.ypu-a-i {
     margin-left: 15px;
 }
-.ypu-a-j{
+
+.ypu-a-j {
     margin-left: 70px;
 }
+
 .page-head-bottom {
     height: 420px;
     width: 100%;
     display: flex;
     flex-direction: row;
 }
-.page-zuo-aa{
+
+.page-zuo-aa {
     height: 410px;
     width: 950px;
     margin-top: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
-.page-you-aa{
+
+.page-you-aa {
     height: 410px;
     width: 590px;
     margin-left: 13px;
     margin-top: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
-.zuo-aa{
+
+.zuo-aa {
     height: 50px;
     width: 950px;
     display: flex;
@@ -713,13 +823,16 @@ export default {
     font-weight: bold;
     font-family: Alibaba-PuHuiTi-Medium;
 }
-.zuo-aa span{
+
+.zuo-aa span {
     margin-left: 20px;
 }
-.zuo-aa i{
+
+.zuo-aa i {
     margin-right: 20px;
 }
-.you-aa{
+
+.you-aa {
     height: 50px;
     width: 590px;
     display: flex;
@@ -728,17 +841,21 @@ export default {
     font-weight: bold;
     font-family: Alibaba-PuHuiTi-Medium;
 }
-.you-aa span{
+
+.you-aa span {
     margin-left: 20px;
 }
-.you-aa i{
+
+.you-aa i {
     margin-right: 20px;
 }
-.zuo-ab{
+
+.zuo-ab {
     height: 370px;
     width: 950px;
 }
-.you-ab{
+
+.you-ab {
     height: 370px;
     width: 590px;
 }

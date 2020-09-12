@@ -141,11 +141,6 @@ export default {
                 decs:'2020年6月的一些业务人文读书记录，记录一下常识',
                 title:'阅读全文',
                 image:'/static/image/card1.jpg'
-            },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
-                title:'阅读全文',
-                image:'/static/image/card1.jpg'
             },]
         }
     },
@@ -166,21 +161,12 @@ export default {
 
             })
         },
-        getWzList() {
-            this.$api.get('/api/v1/category/' + id, this.wz, (res) => {
-                if (res) {
-                    let list = [];
-                    for (let i = 0; i < res.data.length; i++) {
-                        let item = res.data[i];
-                        list.push(...item.articles);
-                    }
-                    this.List = list;
-                }
-            })
-        }
+
+
     },
     mounted() {
-       this.getWzList();
+       this.getWz();
+
     }
 }
 </script>

@@ -11,16 +11,13 @@
                     </div>
                 </div>
             </div>
-<!--            <div class="tushi">-->
-<!--            <div class="tushi-head">-->
-<!--                <span>-->
-<!--                    知识技能图-->
-<!--                </span>-->
-<!--            </div>-->
+
+            <div class="tu">
                 <div class="Echarts">
-                <div id="to" style="width: 600px;height: 400px"></div>
+                <div id="to" style="width: 1100px;height: 400px"></div>
                 </div>
-<!--            </div>-->
+            </div>
+
         </div>
 
         </div>
@@ -91,26 +88,45 @@ export default {
 
             // 指定图表的配置项和数据
             var option = {
-                title: {
-                    text: name
-                },
+                legend: {},
                 tooltip: {},
-                legend: {
-                    data:['销量']
+                dataset: {
+                    source: [
+                        ['product', '2012', '2013', '2014', '2015'],
+                        ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+                        ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+                        ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+                    ]
                 },
-                xAxis: {
-                    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-                },
-                yAxis: {},
-                series: [{
-                    name: '销量',
-                    type: 'bar',
-                    data: data
-                }]
+                xAxis: [
+                    {type: 'category', gridIndex: 0},
+                    {type: 'category', gridIndex: 1}
+                ],
+                yAxis: [
+                    {gridIndex: 0},
+                    {gridIndex: 1}
+                ],
+                grid: [
+                    {bottom: '55%'},
+                    {top: '55%'}
+                ],
+                series: [
+                    // These series are in the first grid.
+                    {type: 'bar', seriesLayoutBy: 'row'},
+                    {type: 'bar', seriesLayoutBy: 'row'},
+                    {type: 'bar', seriesLayoutBy: 'row'},
+                    // These series are in the second grid.
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1}
+                ]
             };
+
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
         },
+
     },
     mounted() {
         let data = [1,3,5,6]
@@ -176,28 +192,10 @@ export default {
     background: darkseagreen;
     color: #fff;
 }
-/*.tushi {*/
-/*    width: 500px;*/
-/*    height: 400px;*/
-/*    background: #fff;*/
-/*    margin-top: 30px;*/
-
-/*    border-radius: 5px;*/
-/*}*/
-/*.tushi-head{*/
-/*    height: 50px;*/
-/*    width: 500px;*/
-/*    background: #b49fda;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    font-size: 20px;*/
-/*    font-weight: bold;*/
-/*    color: #fff;*/
-/*}*/
-/*.Echarts{*/
-/*    height: 350px;*/
-/*    width: 500px;*/
-/*    background: #cccccc;*/
-/*}*/
+.tu{
+    width: 1100px;
+    height: 400px;
+    background: #fff;
+    margin-top: 30px;
+}
 </style>
