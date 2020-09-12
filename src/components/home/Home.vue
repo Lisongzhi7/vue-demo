@@ -10,11 +10,11 @@
             <div @click="showDetail(item)" v-for="(item,index) of list" data-aos="zoom-in-up" data-aos-duration="3000"
                  class="kapian show">
                 <div class="kapian-img">
-                    <img src="/static/image/kapian-img1.jpeg">
+                    <img :src="item.img">
                     <span class="biaoti">{{ item.name }}</span>
                 </div>
                 <div class="jieshao">
-                    <span class="fd-jieshao">描述信息</span>
+                    <span class="fd-jieshao">{{item.desc}}</span>
                 </div>
                 <div class="name">
                     <span class="time"><i class="el-icon-date"></i>{{ item.createTimeStr }}</span>
@@ -25,14 +25,14 @@
 
                 </div>
             </div>
-            <el-pagination
-                @prev-click="getRecData()"
-                @next-click="getNextData()"
-                @current-change="getCurrentData()"
-                background
-                layout="prev, pager, next"
-                :total="total">
-            </el-pagination>
+<!--            <el-pagination-->
+<!--                @prev-click="getRecData()"-->
+<!--                @next-click="getNextData()"-->
+<!--                @current-change="getCurrentData()"-->
+<!--                background-->
+<!--                layout="prev, pager, next"-->
+<!--                :total="total">-->
+<!--            </el-pagination>-->
             <!--            <div @click="show()">点我</div>-->
         </div>
 
@@ -43,39 +43,6 @@
 export default {
     name: "head",
     methods: {
-        show() {
-            // for (let i = 4; i < 7; i = i +2) {
-            //     alert(i)
-            // }
-            //
-            //
-            //
-            //
-            // let a = [{
-            //     name: 'zhangsan',
-            //     time: '2020-03-02'
-            // }, {
-            //     name: 'zhangsan',
-            //     time: '2020-06-02'
-            // }];
-            //
-            // let newArr = [];
-            // for (let i = 0; i < a.length; i++) {
-            //     let b = a[i];
-            //     let time = b.time;
-            //     let year = time.substring(0, 4);
-            //     let yf = time.substring(5, 7);
-            //     let day = time.substring(8, 10)
-            //     let res = year + '年' + yf + '月' + day + '日';
-            //     b.time = res;
-            //     newArr.push(b);
-            // }
-            //
-            // for (let i = 0; i < newArr.length; i++) {
-            //     alert(newArr[i].time)
-            // }
-
-        },
         // 获取文章数据
         getList() {
             this.$api.get(`/api/v1/article/${this.current}/${this.size}`, null, (res) => {
@@ -86,8 +53,8 @@ export default {
             })
         },
         getNextData() {
-            this.current = this.current + 1;
-            this.getList();
+            // this.current = this.current + 1;
+            // this.getList();
         },
         getRecData() {
             this.current = this.current - 1;
@@ -105,14 +72,86 @@ export default {
         }
     },
     mounted() {
-        this.getList();
+
     },
     created() {
         console.log("created")
     },
     data() {
         return {
-            list: [],
+            list: [{
+                img:'/static/image/kapian-img1.jpeg',
+                name:'Vue学习笔记',
+                createTimeStr:'2020年9月1日',
+                tags:[{
+                    name:'Vue',
+                },{
+                    name:'vue学习',
+                },{
+                    name:'前端',
+                }],
+                desc:'记录Vue基础知识，包含动态class，常用指令'
+            },{
+                img:'/static/image/kapian-img1.jpeg',
+                name:'HTML学习笔记',
+                createTimeStr:'2020年8月11日',
+                tags:[{
+                    name:'HTML',
+                },{
+                    name:'HTML学习',
+                },{
+                    name:'前端',
+                }],
+                desc:'记录HTML基础知识，包含用法，常用标签，以及内容整理'
+            },{
+                img:'/static/image/kapian-img1.jpeg',
+                name:'CSS学习笔记',
+                createTimeStr:'2020年9月3日',
+                tags:[{
+                    name:'CSS',
+                },{
+                    name:'CSS学习',
+                },{
+                    name:'前端',
+                }],
+                desc:'记录CSS基础知识，包含样式，用法等'
+            },{
+                img:'/static/image/kapian-img1.jpeg',
+                name:'JavaScript学习笔记',
+                createTimeStr:'2020年9月4日',
+                tags:[{
+                    name:'JavaScript',
+                },{
+                    name:'JavaScript学习',
+                },{
+                    name:'前端',
+                }],
+                desc:'记录JavaScript基础知识，包含js用法，语句，含义'
+            },{
+                img:'/static/image/kapian-img1.jpeg',
+                name:'Git学习笔记',
+                createTimeStr:'2020年9月1日',
+                tags:[{
+                    name:'Git',
+                },{
+                    name:'Git学习',
+                },{
+                    name:'前端',
+                }],
+                desc:'记录Git基础知识，用于双方合作桥梁，共同学习'
+            },{
+                img:'/static/image/kapian-img1.jpeg',
+                name:'随笔笔记',
+                createTimeStr:'2020年9月1日',
+                tags:[{
+                    name:'随机笔记',
+                },{
+                    name:'读书笔记',
+                },{
+                    name:'学习',
+                }],
+                desc:'记录读书笔记'
+            },],
             // 当前页码
             current: 1,
             // 每页数据条数
@@ -128,7 +167,6 @@ export default {
 <style scoped>
 .head {
     width: 100%;
-    background: #c2e9fb;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -181,8 +219,26 @@ export default {
     height: 340px;
     width: 350px;
     margin-bottom: 40px;
-}
 
+}
+.kapian:hover{
+    animation: kapian 3s infinite;
+    cursor: pointer;
+}
+@keyframes kapian {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+    0%{
+        transform: scale(1);  /*开始为原始大小*/
+    }
+    25%{
+        transform: scale(1.1); /*放大1.1倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+}
 .kapian-img {
     height: 210px;
     width: 350px;

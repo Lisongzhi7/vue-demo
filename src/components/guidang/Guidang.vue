@@ -112,33 +112,33 @@ export default {
                 title:'阅读全文',
                 image:'/static/image/card1.jpg'
             },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                time:'2020-7月读书',
+                decs:'记录好文好章，做好笔记，扎实自我',
+                title:'阅读全文',
+                image:'/static/image/card2.jpg'
+            },{
+                time:'JavaScript学习笔记',
+                decs:'了解JavaScript的基础知识以及运用',
+                title:'阅读全文',
+                image:'/static/image/card3.jpg'
+            },{
+                time:'HTML学习笔记',
+                decs:'扎实学习HTML知识，编写样式好看的布局',
                 title:'阅读全文',
                 image:'/static/image/card1.jpg'
             },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                time:'Vue学习笔记',
+                decs:'了解Vue框架，以及运用Vue，知道里面的内容',
                 title:'阅读全文',
-                image:'/static/image/card1.jpg'
+                image:'/static/image/card2.jpg'
             },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                time:'CSS学习笔记',
+                decs:'掌握CSS样式以及了解并活用CSS当中的样式和方法',
                 title:'阅读全文',
-                image:'/static/image/card1.jpg'
+                image:'/static/image/card3.jpg'
             },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
-                title:'阅读全文',
-                image:'/static/image/card1.jpg'
-            },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
-                title:'阅读全文',
-                image:'/static/image/card1.jpg'
-            },{
-                time:'2020-6月读书',
-                decs:'2020年6月的一些业务人文读书记录，记录一下常识',
+                time:'2020-8月读书',
+                decs:'2020年8月的一些业务人文读书记录，记录一下常识',
                 title:'阅读全文',
                 image:'/static/image/card1.jpg'
             },]

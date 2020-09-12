@@ -46,8 +46,13 @@
                 </div>
             </div>
             <el-dialog :modal-append-to-body="false" :show-close="false" :visible.sync="dialogFormVisible">
-                <div class="zhezhao">
-                    <span><img src="/static/image/card6.gif"></span>
+                <div class="zhezhao-a">
+                    <span class="aaa">名言警句</span>
+                    <span class="bbb">
+                        意志的出现不是对愿望的否定，而是把愿望合并和提升到一个更高的意识水平上。——罗洛·梅<br>
+                        不作什么决定的意志不是现实的意志；无性格的人从来不做出决定。——黑格尔<br>
+                        立志用功如种树然，方其根芽，犹未有干；及其有干，尚未有枝；枝而后叶，叶而后花。——王守仁
+                    </span>
                 </div>
             </el-dialog>
         </div>
@@ -112,79 +117,7 @@ export default {
                 log: false
             })
         }, 1000)
-    }
-};
-
-(function (window, document, undefined) {
-    var hearts = [];
-    window.requestAnimationFrame = (function () {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-            function (callback) {
-                setTimeout(callback, 1000 / 60);
-            }
-    })();
-    init();
-
-    function init() {
-        //css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
-        css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px; left: -5px;}.heart:before{top: -5px; left: -5px;}");
-        attachEvent();
-        gameloop();
-    }
-
-    function gameloop() {
-        for (var i = 0; i < hearts.length; i++) {
-            if (hearts[i].alpha <= 0) {
-                document.body.removeChild(hearts[i].el);
-                hearts.splice(i, 1);
-                continue;
-            }
-            hearts[i].y--;
-            hearts[i].scale += 0.050;  //hearts[i].scale += 0.004;
-            hearts[i].alpha -= 0.013;  //hearts[i].alpha -= 0.013;
-            hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
-        }
-        requestAnimationFrame(gameloop);
-    }
-    function attachEvent() {
-        var old = typeof window.onclick === "function" && window.onclick;
-        window.onclick = function (event) {
-            old && old();
-            createHeart(event);
-        }
-    }
-
-    function createHeart(event) {
-        var d = document.createElement("div");
-        d.className = "heart";
-        hearts.push({
-            el: d,
-            x: event.clientX - 5,
-            y: event.clientY - 5,
-            scale: 1,
-            alpha: 1,
-            color: randomColor()
-        });
-        document.body.appendChild(d);
-    }
-
-    function css(css) {
-        var style = document.createElement("style");
-        style.type = "text/css";
-        try {
-            style.appendChild(document.createTextNode(css));
-        } catch (ex) {
-            style.styleSheet.cssText = css;
-        }
-        document.getElementsByTagName('head')[0].appendChild(style);
-    }
-
-    function randomColor() {
-        return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
-    }
-})(window, document);
-
-//      回到顶部效果
+    }}
 window.onload = function () {
     var obtn = document.getElementById('return_top');  //获取回到顶部按钮的ID
     var clientHeight = document.documentElement.clientHeight;   //获取可视区域的高度
@@ -222,8 +155,70 @@ window.onload = function () {
                 clearInterval(timer);
             }
         }, 30);
-    }
-
+    },
+    (function(window, document, undefined) {
+        var hearts = [];
+        window.requestAnimationFrame = (function() {
+            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function(callback) {
+                    setTimeout(callback, 1000 / 60);
+                }
+        })();
+        init();
+        function init() {
+            //css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+            css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px; left: -5px;}.heart:before{top: -5px; left: -5px;}");
+            attachEvent();
+            gameloop();
+        }
+        function gameloop() {
+            for (var i = 0; i < hearts.length; i++) {
+                if (hearts[i].alpha <= 0) {
+                    document.body.removeChild(hearts[i].el);
+                    hearts.splice(i, 1);
+                    continue;
+                }
+                hearts[i].y--;
+                hearts[i].scale += 0.050;  //hearts[i].scale += 0.004;
+                hearts[i].alpha -= 0.013;  //hearts[i].alpha -= 0.013;
+                hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+            }
+            requestAnimationFrame(gameloop);
+        }
+        function attachEvent() {
+            var old = typeof window.onclick === "function" && window.onclick;
+            window.onclick = function(event) {
+                old && old();
+                createHeart(event);
+            }
+        }
+        function createHeart(event) {
+            var d = document.createElement("div");
+            d.className = "heart";
+            hearts.push({
+                el: d,
+                x: event.clientX - 5,
+                y: event.clientY - 5,
+                scale: 1,
+                alpha: 1,
+                color: randomColor()
+            });
+            document.body.appendChild(d);
+        }
+        function css(css) {
+            var style = document.createElement("style");
+            style.type = "text/css";
+            try {
+                style.appendChild(document.createTextNode(css));
+            } catch(ex) {
+                style.styleSheet.cssText = css;
+            }
+            document.getElementsByTagName('head')[0].appendChild(style);
+        }
+        function randomColor() {
+            return "rgb(" + (~~ (Math.random() * 255)) + "," + (~~ (Math.random() * 255)) + "," + (~~ (Math.random() * 255)) + ")";
+        }
+    })(window, document);
 }
 
 
@@ -344,11 +339,22 @@ a {
     bottom: 0px;
 }
 
-.zhezhao {
+.zhezhao-a{
     height: 300px;
-    width: 200px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
 }
-
+.aaa{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Alibaba-PuHuiTi-Medium";
+}
+.bbb{
+    font-size: 14px;
+    margin-top: 25px;
+    font-family: "Alibaba-PuHuiTi-Medium";
+}
 .lunbo {
     height: 500px;
     width: 100%;

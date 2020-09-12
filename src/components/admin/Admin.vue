@@ -191,7 +191,7 @@
                 </div>
             </div>
         </div>
-        <el-dialog title="收货地址" :visible.sync="isShow">
+        <el-dialog title="提交" :visible.sync="isShow">
             <el-form :model="yqlj">
                 <el-form-item label="名称" :label-width="formLabelWidth">
                     <el-input v-model="yqlj.name" autocomplete="off"></el-input>
