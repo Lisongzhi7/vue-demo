@@ -80,7 +80,7 @@ export default {
     data() {
         return {
             list: [{
-                img:'/static/image/kapian-img1.jpeg',
+                img:'http://xlsb.luokangyuan.com/kapian-img1.jpeg',
                 name:'Vue学习笔记',
                 createTimeStr:'2020年9月1日',
                 tags:[{
@@ -92,7 +92,7 @@ export default {
                 }],
                 desc:'记录Vue基础知识，包含动态class，常用指令'
             },{
-                img:'/static/image/kapian-img1.jpeg',
+                img:'http://xlsb.luokangyuan.com/a1.jpg',
                 name:'HTML学习笔记',
                 createTimeStr:'2020年8月11日',
                 tags:[{
@@ -104,7 +104,7 @@ export default {
                 }],
                 desc:'记录HTML基础知识，包含用法，常用标签，以及内容整理'
             },{
-                img:'/static/image/kapian-img1.jpeg',
+                img:'http://xlsb.luokangyuan.com/a2.jpg',
                 name:'CSS学习笔记',
                 createTimeStr:'2020年9月3日',
                 tags:[{
@@ -116,7 +116,7 @@ export default {
                 }],
                 desc:'记录CSS基础知识，包含样式，用法等'
             },{
-                img:'/static/image/kapian-img1.jpeg',
+                img:'http://xlsb.luokangyuan.com/a3.jpg',
                 name:'JavaScript学习笔记',
                 createTimeStr:'2020年9月4日',
                 tags:[{
@@ -128,7 +128,7 @@ export default {
                 }],
                 desc:'记录JavaScript基础知识，包含js用法，语句，含义'
             },{
-                img:'/static/image/kapian-img1.jpeg',
+                img:'http://xlsb.luokangyuan.com/a4.jpg',
                 name:'Git学习笔记',
                 createTimeStr:'2020年9月1日',
                 tags:[{
@@ -140,7 +140,7 @@ export default {
                 }],
                 desc:'记录Git基础知识，用于双方合作桥梁，共同学习'
             },{
-                img:'/static/image/kapian-img1.jpeg',
+                img:'http://xlsb.luokangyuan.com/a5.jpg',
                 name:'随笔笔记',
                 createTimeStr:'2020年9月1日',
                 tags:[{
@@ -151,6 +151,18 @@ export default {
                     name:'学习',
                 }],
                 desc:'记录读书笔记'
+            },{
+                img:'http://xlsb.luokangyuan.com/a6.jpg',
+                name:'Examples笔记',
+                createTimeStr:'2020年8月11日',
+                tags:[{
+                    name:'examples笔记',
+                },{
+                    name:'插件笔记',
+                },{
+                    name:'插件',
+                }],
+                desc:'好的插件可以让你受益'
             },],
             // 当前页码
             current: 1,

@@ -13,8 +13,8 @@
             </div>
             <div class="fd-zhong">
                     <div data-aos="fade-up"
-                         data-aos-duration="3000" v-for="(item,index) of List" class="fd-zuo">
-                        <div class="zuo-name" :class="{'fd-left-card' : index % 2 != 0}">
+                         data-aos-duration="3000" v-for="(item,index) of List"  class="fd-zuo">
+                        <div class="zuo-name"  :class="{'fd-left-card' : index % 2 != 0,}" >
                             <div class="zuo-head">
                                 <span>{{item.time}}</span>
                             </div>
@@ -110,37 +110,37 @@ export default {
                 time:'2020-6月读书',
                 decs:'2020年6月的一些业务人文读书记录，记录一下常识',
                 title:'阅读全文',
-                image:'/static/image/card1.jpg'
+                image:'http://xlsb.luokangyuan.com/card1.jpg'
             },{
                 time:'2020-7月读书',
                 decs:'记录好文好章，做好笔记，扎实自我',
                 title:'阅读全文',
-                image:'/static/image/card2.jpg'
+                image:'http://xlsb.luokangyuan.com/card2.jpg'
             },{
                 time:'JavaScript学习笔记',
                 decs:'了解JavaScript的基础知识以及运用',
                 title:'阅读全文',
-                image:'/static/image/card3.jpg'
+                image:'http://xlsb.luokangyuan.com/card3.jpg'
             },{
                 time:'HTML学习笔记',
                 decs:'扎实学习HTML知识，编写样式好看的布局',
                 title:'阅读全文',
-                image:'/static/image/card1.jpg'
+                image:'http://xlsb.luokangyuan.com/card1.jpg'
             },{
                 time:'Vue学习笔记',
                 decs:'了解Vue框架，以及运用Vue，知道里面的内容',
                 title:'阅读全文',
-                image:'/static/image/card2.jpg'
+                image:'http://xlsb.luokangyuan.com/card2.jpg'
             },{
                 time:'CSS学习笔记',
                 decs:'掌握CSS样式以及了解并活用CSS当中的样式和方法',
                 title:'阅读全文',
-                image:'/static/image/card3.jpg'
+                image:'http://xlsb.luokangyuan.com/card3.jpg'
             },{
                 time:'2020-8月读书',
                 decs:'2020年8月的一些业务人文读书记录，记录一下常识',
                 title:'阅读全文',
-                image:'/static/image/card1.jpg'
+                image:'http://xlsb.luokangyuan.com/card1.jpg'
             },]
         }
     },
@@ -161,7 +161,6 @@ export default {
 
             })
         },
-
 
     },
     mounted() {
@@ -264,6 +263,7 @@ export default {
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
+
 .zuo-head{
     height: 50px;
     width: 300px;
@@ -357,7 +357,6 @@ export default {
     margin-left: 480px;
     background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
-
 
 
 

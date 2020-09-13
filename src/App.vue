@@ -3,7 +3,7 @@
         <div v-if="!showNav" class="fd-head">
             <div class="fd-head-center">
                 <div class="fd-logo-box">
-                    <span><img class="logo-box" src="/static/image/logo.png">小懒码</span>
+                    <span><img class="logo-box" src="http://xlsb.luokangyuan.com/logo.png">小懒码</span>
                 </div>
                 <div class="fd-logo-tile">
                     <router-link to="/home"><span class="fd-icon"><i
@@ -16,15 +16,11 @@
                     </router-link>
                     <router-link to="/guanyuwo"><span class="fd-icon"><i
                         class="iconfont icon-guanyuwo"></i></span><span>关于我</span></router-link>
+                    <router-link to="/admin"><span class="fd-icon"><i
+                        class="iconfont icon-guidang2"></i></span><span>管理界面</span></router-link>
                     <span @click="dialogFormVisible = true"><i class="el-icon-search"></i></span>
                 </div>
             </div>
-
-            <el-dialog :modal-append-to-body="false" :show-close="false" :visible.sync="dialogFormVisible">
-                <div class="zhezhao">
-                    <span><img src="/static/image/card6.gif"></span>
-                </div>
-            </el-dialog>
         </div>
         <div v-if="showNav" class="fd-head second">
             <div class="fd-head-center">
@@ -42,6 +38,10 @@
                     </router-link>
                     <router-link to="/guanyuwo"><span class="fd-icon"><i
                         class="iconfont icon-guanyuwo"></i></span><span>关于我</span></router-link>
+
+                    <router-link to="/admin"><span class="fd-icon"><i
+                        class="iconfont icon-guidang2"></i></span><span>管理界面</span></router-link>
+
                     <span @click="dialogFormVisible = true"><i class="el-icon-search"></i></span>
                 </div>
             </div>
@@ -111,8 +111,8 @@ export default {
                 pluginModelPath: 'live2d-widget-model-z16/assets/',
                 tagMode: false,
                 debug: false,
-                model: {jsonPath: '/static/live2dw/live2d-widget-model-z16/assets/z16.model.json'},
-                display: {position: 'left', width: 250, height: 400},
+                model: {jsonPath: '/static/live2dw/live2d-widget-model-koharu/assets/koharu.model.json'},
+                display: {position: 'right', width: 150, height: 300},
                 mobile: {show: true},
                 log: false
             })

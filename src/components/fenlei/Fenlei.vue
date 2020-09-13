@@ -13,7 +13,9 @@
             </div>
 
             <div class="tu">
-                <div class="Echarts">
+                <div class="Echarts" data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="2000">
                 <div id="to" style="width: 1100px;height: 400px"></div>
                 </div>
             </div>
@@ -92,10 +94,10 @@ export default {
                 tooltip: {},
                 dataset: {
                     source: [
-                        ['product', '2012', '2013', '2014', '2015'],
-                        ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
-                        ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
-                        ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+                        ['product', '2019-06', '2019-11', '2020-04', '2020-09'],
+                        ['HTML', 41.1, 30.4, 45.1, 53.3],
+                        ['Web前端', 43.5, 46.1, 55.7, 57.1],
+                        ['Git', 24.1, 34.2, 43.5, 54.4]
                     ]
                 },
                 xAxis: [
@@ -142,7 +144,6 @@ export default {
 .head {
     width: 100%;
     height: 100%;
-    background: #c2e9fb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,5 +198,9 @@ export default {
     height: 400px;
     background: #fff;
     margin-top: 30px;
+}
+.Echarts{
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+    border-radius: 5px;
 }
 </style>

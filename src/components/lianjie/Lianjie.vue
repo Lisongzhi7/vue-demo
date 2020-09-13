@@ -33,37 +33,37 @@ export default {
     data(){
         return{
             list:[{
-                image:'/static/image/card1.jpg/',
+                image:'http://xlsb.luokangyuan.com/card1.jpg',
                 name:'小懒码',
                 descInfo:'不负所望，积极向上！',
                 githubUrl:'http://luokangyuan.com/'
             },{
-                image:'/static/image/card8.jpg/',
+                image:'http://xlsb.luokangyuan.com/card8.jpg',
                 name:'码酱',
                 descInfo:'不忘初心，努力做有价值的技术文章',
                 githubUrl:'http://luokangyuan.com/'
             },{
-                image:'/static/image/card2.jpg/',
+                image:'http://xlsb.luokangyuan.com/card2.jpg',
                 name:'珊瑚',
                 descInfo:'前端大佬，PS大佬，不仅会写代码，还弹的一手好吉他',
                 githubUrl:'http://luokangyuan.com/'
             },{
-                image:'/static/image/card3.jpg/',
+                image:'http://xlsb.luokangyuan.com/card3.jpg',
                 name:'闪烁之狐',
                 descInfo:'编程界大佬，技术牛，不懂的都可以请教大佬',
                 githubUrl:'https://blinkfox.github.io/'
             },{
-                image:'/static/image/card4.jpg/',
+                image:'http://xlsb.luokangyuan.com/card4.jpg',
                 name:'ja_rome',
                 descInfo:'平凡的脚步也可以走出伟大的行程',
                 githubUrl:'https://me.csdn.net/jlh912008548'
             },{
-                image:'/static/image/kapian-img1.jpeg/',
+                image:'http://xlsb.luokangyuan.com/kapian-img1.jpeg',
                 name:'轩逸',
                 descInfo:'Open source is a spirit, I enjoy it.',
                 githubUrl:'http://luokangyuan.com/'
             },{
-                image:'/static/image/card9.jpg/',
+                image:'http://xlsb.luokangyuan.com/card9.jpg',
                 name:'Jitwxs',
                 descInfo:'专注 Java 后端开发、SpringBoot等技术分享',
                 githubUrl:'https://www.jitwxs.cn/'
