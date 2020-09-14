@@ -280,13 +280,13 @@ export default {
             ListImg: [{
                 img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
             }, {
-                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+                img: 'http://xlsb.luokangyuan.com/a1.jpg'
             }, {
-                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+                img: 'http://xlsb.luokangyuan.com/a2.jpg'
             }, {
-                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+                img: 'http://xlsb.luokangyuan.com/a3.jpg'
             }, {
-                img: 'http://xlsb.luokangyuan.com/image-bj-03.jpg'
+                img: 'http://xlsb.luokangyuan.com/a4.jpg'
             },],
             isShow:false,
             yqlj: {
@@ -542,22 +542,22 @@ export default {
 }
 
 .kapian1 {
-    background: #00c6fb;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .kapian2 {
-    background: #ee9900;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .kapian3 {
-    background: #b49fda;
+    background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .kapian4 {
-    background: #63a35c;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 

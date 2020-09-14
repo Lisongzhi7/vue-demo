@@ -57,45 +57,59 @@ export default {
     data(){
         return{
             list:[{
-                name:'Web (1)'
+                name: 'Web (1)'
+            }, {
+                name: 'CSS (11)'
+            }, {
+                name: 'Java (7)'
+            }, {
+                name: 'Html (4)'
+            }, {
+                name: 'JavaScript (14)'
+            }, {
+                name: '日常总结 (14)'
+            }, {
+                name: '设计模式 (5)'
+            }, {
+                name: '多线程 (1)'
+            }, {
+                name: 'jdk源码 (1)'
+            }, {
+                name: '程序 (1)'
+            }, {
+                name: 'Java (4)'
+            }, {
+                name: 'lock (1)'
+            }, {
+                name: '类图 (1)'
+            }, {
+                name: '单列模式 (7)'
+            }, {
+                name: '工厂模式 (1)'
+            }, {
+                name: '建造者模式 (1)'
+            }, {
+                name: '适配者模式 (2)'
+            }, {
+                name: '中国文化 (1)'
+            }, {
+                name: '文化发展 (1)'
+            }, {
+                name: '设计模式 (1)'
             },{
-                name:'CSS (11)'
+                name: '日常总结 (1)'
             },{
-                name:'Java (7)'
+                name: '并发 (1)'
             },{
-                name:'Html (4)'
+                name: 'Github (1)'
             },{
-                name:'JavaScript (14)'
+                name: '单列模式 (1)'
             },{
-                name:'JavaScript (14)'
+                name: 'UML (1)'
             },{
-                name:'JavaScript (14)'
+                name: 'ES6 (1)'
             },{
-                name:'JavaScript (14)'
-            },{
-                name:'JavaScript (14)'
-            },{
-                name:'JavaScript (14)'
-            },{
-                name:'JavaScript (14)'
-            },{
-                name:'JavaScript (14)'
-            },{
-                name:'JavaScript (14)'
-            },{
-                name:'Java (7)'
-            },{
-                name:'Java (7)'
-            },{
-                name:'Java (7)'
-            },{
-                name:'Java (7)'
-            },{
-                name:'Java (7)'
-            },{
-                name:'Java (7)'
-            },{
-                name:'Java (7)'
+                name: 'IDEA (1)'
             },],
             //
             // wz: {
@@ -196,7 +210,7 @@ export default {
     flex-direction: column;
 }
 .toubu{
-    height: 270px;
+    height: 360px;
     width: 1000px;
     background: #fff;
     margin-top: -40px;
@@ -205,7 +219,7 @@ export default {
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 .label{
-    height: 270px;
+    height: 360px;
     width: 1000px;
     display: flex;
     flex-direction: column;

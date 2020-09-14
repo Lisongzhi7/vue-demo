@@ -12,10 +12,9 @@
                 </div>
             </div>
 
-            <div class="tu">
-                <div class="Echarts" data-aos="flip-left"
-                     data-aos-easing="ease-out-cubic"
-                     data-aos-duration="2000">
+            <div class="tu" data-aos="fade-up"
+                 data-aos-duration="3000">
+                <div class="Echarts" >
                 <div id="to" style="width: 1100px;height: 400px"></div>
                 </div>
             </div>
@@ -41,35 +40,49 @@ export default {
             }, {
                 name: 'JavaScript (14)'
             }, {
-                name: 'JavaScript (14)'
+                name: '日常总结 (14)'
             }, {
-                name: 'JavaScript (14)'
+                name: '设计模式 (5)'
             }, {
-                name: 'JavaScript (14)'
+                name: '多线程 (1)'
             }, {
-                name: 'JavaScript (14)'
+                name: 'jdk源码 (1)'
             }, {
-                name: 'JavaScript (14)'
+                name: '程序 (1)'
             }, {
-                name: 'JavaScript (14)'
+                name: 'Java (4)'
             }, {
-                name: 'JavaScript (14)'
+                name: 'lock (1)'
             }, {
-                name: 'JavaScript (14)'
+                name: '类图 (1)'
             }, {
-                name: 'Java (7)'
+                name: '单列模式 (7)'
             }, {
-                name: 'Java (7)'
+                name: '工厂模式 (1)'
             }, {
-                name: 'Java (7)'
+                name: '建造者模式 (1)'
             }, {
-                name: 'Java (7)'
+                name: '适配者模式 (2)'
             }, {
-                name: 'Java (7)'
+                name: '中国文化 (1)'
             }, {
-                name: 'Java (7)'
+                name: '文化发展 (1)'
             }, {
-                name: 'Java (7)'
+                name: '设计模式 (1)'
+            },{
+                name: '日常总结 (1)'
+            },{
+                name: '并发 (1)'
+            },{
+                name: 'Github (1)'
+            },{
+                name: '单列模式 (1)'
+            },{
+                name: 'UML (1)'
+            },{
+                name: 'ES6 (1)'
+            },{
+                name: 'IDEA (1)'
             },]
         }
     },
@@ -156,7 +169,7 @@ export default {
 }
 
 .label {
-    height: 270px;
+    height: 360px;
     width: 1100px;
     margin-top: -40px;
     display: flex;
@@ -203,4 +216,5 @@ export default {
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
     border-radius: 5px;
 }
+
 </style>

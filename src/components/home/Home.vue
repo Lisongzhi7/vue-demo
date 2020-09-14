@@ -217,6 +217,7 @@ export default {
 }
 
 .fd-ziliao {
+    height: 1400px;
     width: 1100px;
     margin-top: 30px;
     display: flex;

@@ -36,7 +36,7 @@ export default {
                 image:'http://xlsb.luokangyuan.com/card1.jpg',
                 name:'小懒码',
                 descInfo:'不负所望，积极向上！',
-                githubUrl:'http://luokangyuan.com/'
+                githubUrl:'https://github.com/Lisongzhi7'
             },{
                 image:'http://xlsb.luokangyuan.com/card8.jpg',
                 name:'码酱',
