@@ -201,6 +201,9 @@ export default {
     transform: rotate(180deg);
     margin-top: -86px;
 }
+.bast:hover{
+    cursor: pointer;
+}
 .guidang {
     height: 1600px;
     width: 1100px;
@@ -237,6 +240,7 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .bast{
     display: flex;
     justify-content: center;

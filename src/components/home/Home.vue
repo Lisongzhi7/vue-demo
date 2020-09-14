@@ -69,10 +69,29 @@ export default {
                    wz: item
                 }
             })
+        },
+        getwz(){
+           let url = '/api/v1/article/' + this.current +'/' +this.size
+           // let url1 = '/api/v1/article/1/10'
+
+            this.$api.get(url, params, (res) => {
+                if (res) {
+            
+                }
+            })
+        },
+        getnext(){
+            this.current ++;
+            this.getwz()
+        },
+        getpre() {
+            this.current --;
+            this.getwz();
+
         }
     },
     mounted() {
-
+        this.get()
     },
     created() {
         console.log("created")

@@ -16,8 +16,6 @@
                     </router-link>
                     <router-link to="/guanyuwo"><span class="fd-icon"><i
                         class="iconfont icon-guanyuwo"></i></span><span>关于我</span></router-link>
-                    <router-link to="/admin"><span class="fd-icon"><i
-                        class="iconfont icon-guidang2"></i></span><span>管理界面</span></router-link>
                     <span @click="dialogFormVisible = true"><i class="el-icon-search"></i></span>
                 </div>
             </div>
@@ -38,10 +36,6 @@
                     </router-link>
                     <router-link to="/guanyuwo"><span class="fd-icon"><i
                         class="iconfont icon-guanyuwo"></i></span><span>关于我</span></router-link>
-
-                    <router-link to="/admin"><span class="fd-icon"><i
-                        class="iconfont icon-guidang2"></i></span><span>管理界面</span></router-link>
-
                     <span @click="dialogFormVisible = true"><i class="el-icon-search"></i></span>
                 </div>
             </div>

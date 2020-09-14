@@ -6,6 +6,7 @@
                     <span data-aos="zoom-in" data-aos-duration="2000">文章标签</span>
                 </div>
                 <div class="label-tow">
+
                     <div data-aos="zoom-in" data-aos-duration="2000" v-for="(item,index) of list"
                          :style="{background:randoColor()}" :class="createClasee(index)" class="bast">{{ item.name }}
                     </div>
@@ -161,7 +162,9 @@ export default {
     justify-content: center;
     align-items: center;
 }
-
+.bast:hover{
+    cursor: pointer;
+}
 .zhongbu {
     height: 1900px;
     width: 1100px;
