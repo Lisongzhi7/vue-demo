@@ -149,7 +149,7 @@ window.onload = function () {
                 clearInterval(timer);
             }
         }, 30);
-    },
+    };
     (function(window, document, undefined) {
         var hearts = [];
         window.requestAnimationFrame = (function() {

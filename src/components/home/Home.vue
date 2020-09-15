@@ -10,11 +10,11 @@
             <div @click="showDetail(item)" v-for="(item,index) of list" data-aos="zoom-in-up" data-aos-duration="3000"
                  class="kapian show">
                 <div class="kapian-img">
-                    <img :src="item.img">
+                    <img :src="item.image">
                     <span class="biaoti">{{ item.name }}</span>
                 </div>
                 <div class="jieshao">
-                    <span class="fd-jieshao">{{item.desc}}</span>
+                    <span class="fd-jieshao">{{item.desction}}</span>
                 </div>
                 <div class="name">
                     <span class="time"><i class="el-icon-date"></i>{{ item.createTimeStr }}</span>
@@ -71,13 +71,19 @@ export default {
             })
         },
         getwz(){
-           let url = '/api/v1/article/' + this.current +'/' +this.size
+           let url = '/api/v1/article/master'
            // let url1 = '/api/v1/article/1/10'
 
-            this.$api.get(url, params, (res) => {
+            this.$api.get(url, null, (res) => {
                 if (res) {
-            
+                  let data = res.data
+                    let wz = []
+                    for (let i = 0; i < data.length;  i++) {
+                        wz.push(...data[i].articles)
+                    }
+                    this.list = wz
                 }
+
             })
         },
         getnext(){
@@ -91,102 +97,19 @@ export default {
         }
     },
     mounted() {
-        this.get()
+        this.getwz();
+
     },
     created() {
         console.log("created")
     },
     data() {
         return {
-            list: [{
-                img:'http://xlsb.luokangyuan.com/kapian-img1.jpeg',
-                name:'Vue学习笔记',
-                createTimeStr:'2020年9月1日',
-                tags:[{
-                    name:'Vue',
-                },{
-                    name:'vue学习',
-                },{
-                    name:'前端',
-                }],
-                desc:'记录Vue基础知识，包含动态class，常用指令'
-            },{
-                img:'http://xlsb.luokangyuan.com/a1.jpg',
-                name:'HTML学习笔记',
-                createTimeStr:'2020年8月11日',
-                tags:[{
-                    name:'HTML',
-                },{
-                    name:'HTML学习',
-                },{
-                    name:'前端',
-                }],
-                desc:'记录HTML基础知识，包含用法，常用标签，以及内容整理'
-            },{
-                img:'http://xlsb.luokangyuan.com/a2.jpg',
-                name:'CSS学习笔记',
-                createTimeStr:'2020年9月3日',
-                tags:[{
-                    name:'CSS',
-                },{
-                    name:'CSS学习',
-                },{
-                    name:'前端',
-                }],
-                desc:'记录CSS基础知识，包含样式，用法等'
-            },{
-                img:'http://xlsb.luokangyuan.com/a3.jpg',
-                name:'JavaScript学习笔记',
-                createTimeStr:'2020年9月4日',
-                tags:[{
-                    name:'JavaScript',
-                },{
-                    name:'JavaScript学习',
-                },{
-                    name:'前端',
-                }],
-                desc:'记录JavaScript基础知识，包含js用法，语句，含义'
-            },{
-                img:'http://xlsb.luokangyuan.com/a4.jpg',
-                name:'Git学习笔记',
-                createTimeStr:'2020年9月1日',
-                tags:[{
-                    name:'Git',
-                },{
-                    name:'Git学习',
-                },{
-                    name:'前端',
-                }],
-                desc:'记录Git基础知识，用于双方合作桥梁，共同学习'
-            },{
-                img:'http://xlsb.luokangyuan.com/a5.jpg',
-                name:'随笔笔记',
-                createTimeStr:'2020年9月1日',
-                tags:[{
-                    name:'随机笔记',
-                },{
-                    name:'读书笔记',
-                },{
-                    name:'学习',
-                }],
-                desc:'记录读书笔记'
-            },{
-                img:'http://xlsb.luokangyuan.com/a6.jpg',
-                name:'Examples笔记',
-                createTimeStr:'2020年8月11日',
-                tags:[{
-                    name:'examples笔记',
-                },{
-                    name:'插件笔记',
-                },{
-                    name:'插件',
-                }],
-                desc:'好的插件可以让你受益'
-            },],
+            list:[],
             // 当前页码
             current: 1,
             // 每页数据条数
-            size: 20,
+            size: 3,
             total: 0
         }
     },
@@ -267,9 +190,12 @@ export default {
     50%{
         transform: scale(1);
     }
-    75%{
-        transform: scale(1.1);
-    }
+    /*75%{*/
+    /*    transform: scale(1.1);*/
+    /*}*/
+    /*100%{*/
+    /*    transform: scale(1);*/
+    /*}*/
 }
 .kapian-img {
     height: 210px;
