@@ -66,7 +66,7 @@
         </div>
 
         <div class="fd-bottom">
-            蜀ICP备18020378号
+          蜀ICP备2020027592号
         </div>
 
     </div>
@@ -307,7 +307,7 @@ a {
     font-family: "Alibaba-PuHuiTi-Medium";
 }
 
-.router-link-active span {
+.router-link-active span{
     color: lightpink;
 }
 
@@ -384,10 +384,10 @@ a {
     font-size: 15px;
 }
 
-.box a:hover {
-    background: lavender;
-    color: #57c6e1;
-}
+/*.box a:hover {*/
+/*    background: lavender;*/
+/*    color: #57c6e1;*/
+/*}*/
 
 #return_top {
     position: fixed;
